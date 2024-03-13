@@ -882,6 +882,11 @@ export interface ApiRestaurantRestaurant extends Schema.CollectionType {
       'oneToMany',
       'api::dessert.dessert'
     >;
+    starters: Attribute.Relation<
+      'api::restaurant.restaurant',
+      'oneToMany',
+      'api::starter.starter'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -893,6 +898,41 @@ export interface ApiRestaurantRestaurant extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::restaurant.restaurant',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiStarterStarter extends Schema.CollectionType {
+  collectionName: 'starters';
+  info: {
+    singularName: 'starter';
+    pluralName: 'starters';
+    displayName: 'Starter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required;
+    restaurant: Attribute.Relation<
+      'api::starter.starter',
+      'manyToOne',
+      'api::restaurant.restaurant'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::starter.starter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::starter.starter',
       'oneToOne',
       'admin::user'
     > &
@@ -921,6 +961,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::dessert.dessert': ApiDessertDessert;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
+      'api::starter.starter': ApiStarterStarter;
     }
   }
 }

@@ -30,6 +30,12 @@
       "relation": "oneToMany",
       "target": "api::dessert.dessert",
       "mappedBy": "restaurant"
+    },
+    "starters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::starter.starter",
+      "mappedBy": "restaurant"
     }
   }
 }

@@ -1,6 +1,14 @@
 # 🚀 Getting started with Strapi
 
-test
+## Strapi
+
+Strapi permet de créer un serveur API facilement, headless CMS
+- headless CMS: parce que renvoie seulement un json, le frontend sera à faire pour faire les calls à l'api
+- strapi permet de configurer une API rapidement notamment via des collections et des autorisations déja configurer
+
+### Npm run develop
+
+Pour lancer l'admin du projet => pour construire les "tables" et leur "types" (comme dans sql)
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 

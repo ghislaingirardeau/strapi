@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "starters",
+  "info": {
+    "singularName": "starter",
+    "pluralName": "starters",
+    "displayName": "Starter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "restaurant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::restaurant.restaurant",
+      "inversedBy": "starters"
+    }
+  }
+}
