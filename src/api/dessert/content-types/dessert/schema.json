@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "desserts",
+  "info": {
+    "singularName": "dessert",
+    "pluralName": "desserts",
+    "displayName": "Dessert"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "integer"
+    },
+    "restaurant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::restaurant.restaurant",
+      "inversedBy": "desserts"
+    }
+  }
+}
